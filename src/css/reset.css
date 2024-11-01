@@ -19,8 +19,14 @@ ul {
 }
 
 a {
-  color: currentColor;
   text-decoration: none;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 10px;
+  display: block;
+  width: max-content;
 }
 
 button {
