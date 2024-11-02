@@ -1,5 +1,5 @@
-import { fetchImages } from "./pixabay-api";
-import { renderGallery } from "./render-functions";
+import { fetchImages } from "./js/pixabay-api.js";
+import { renderGallery } from "./js/render-functions.js";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
@@ -26,7 +26,8 @@ form.addEventListener("submit", (event) => {
       }
       return response.json();
     })
-    .then((images) => {
+      .then((images) => {
+            console.log("Images fetched:", images); // Перевірка результату
       loader.classList.remove("show");
       if (images.length > 0) {
         renderGallery(images, gallery);
@@ -35,8 +36,14 @@ form.addEventListener("submit", (event) => {
       }
     })
     .catch((error) => {
-      loader.classList.remove("show");
-      console.error("Error fetching images:", error);
-      iziToast.error({ message: "An error occurred while fetching images. Please try again later." });
-    });
+  loader.classList.remove("show");
+  console.error("Error fetching images:", error.message); // Додатковий лог
+  iziToast.error({ message: `An error occurred: ${error.message}. Please try again later.` });
+});
+      
+    //   .catch((error) => {
+    //   loader.classList.remove("show");
+    //   console.error("Error fetching images:", error);
+    //   iziToast.error({ message: "An error occurred while fetching images. Please try again later." });
+    // });
 });
