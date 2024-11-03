@@ -20,26 +20,20 @@ form.addEventListener("submit", (event) => {
   gallery.innerHTML = "";
 
   fetchImages(query)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.statusText);
-      }
-      return response.json();
-    })
-      .then((images) => {
-            console.log("Images fetched:", images); // Перевірка результату
+   .then((images) => {
+      console.log("Images fetched:", images); // Перевірка результату
       loader.classList.remove("show");
       if (images.length > 0) {
-        renderGallery(images, gallery);
+         renderGallery(images, gallery);
       } else {
-        iziToast.error({ message: "Sorry, there are no images matching your search query. Please try again!" });
+         iziToast.error({ message: "Sorry, there are no images matching your search query. Please try again!" });
       }
-    })
-    .catch((error) => {
-  loader.classList.remove("show");
-  console.error("Error fetching images:", error.message); // Додатковий лог
-  iziToast.error({ message: `An error occurred: ${error.message}. Please try again later.` });
-});
+   })
+   .catch((error) => {
+      loader.classList.remove("show");
+      console.error("Error fetching images:", error.message);
+      iziToast.error({ message: `An error occurred: ${error.message}. Please try again later.` });
+   });
       
     //   .catch((error) => {
     //   loader.classList.remove("show");
