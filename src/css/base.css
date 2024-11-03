@@ -1,188 +1,60 @@
 :root {
-  /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
-body {
+/* Form's styles */
+form {
   display: flex;
-  flex-direction: column;
-  min-width: 100vw;
-  min-height: 100vh;
-  margin: 0;
+  align-items: center;
+  justify-content: center;
+  margin-top: 36px;
 }
 
-main {
-  flex-grow: 1;
-  margin: 0 auto;
-}
-main:has(.back-link) {
-  text-align: center;
-}
-
-/* Timer styles */
-#datetime-picker {
-  border-radius: 8px;
+form input[type='text'] {
   width: 272px;
   height: 40px;
-  border: 2px solid gray;
-  transition: border-color 0.3s ease;
-  margin-bottom: 20px;
+  padding: 8px 118px 8px 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #808080;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  box-shadow: none;
+  outline: none;
+  transition: border-color 0.3s, color 0.3s;
 }
 
-#datetime-picker:hover {
+form input[type='text']::placeholder {
+  color: #808080;
+}
+
+form input[type='text']:hover {
   border-color: black;
 }
 
-#datetime-picker:focus {
-  border-color: blue;
-}
-
-button {
-  background-color: #4e75ff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 16px;
-  width: max-content;
-  height: 40px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 30px;
-}
-
-button:disabled {
-  background: #cfcfcf;
-  color: #989898;
-  cursor: not-allowed;
-}
-
-.timer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 346px;
-  height: 72px;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.value {
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
+form input[type='text']:focus,
+form input[type='text']:active {
+  border-color: #4e75ff;
   color: #2e2f42;
 }
 
-.label {
-  font-weight: 400;
+form button {
+  width: 91px;
+  height: 40px;
+  margin-left: 8px;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  color: #2e2f42;
-  text-transform: uppercase;
-}
-
-.flatpickr-time input.flatpickr-hour {
-  font-weight: normal;
-}
-
-/* Snackbar styles */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: center;
-}
-
-label {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-}
-
-input[type='number'] {
-  border: 1px solid #808080;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background-color: #4e75ff;
+  border: none;
   border-radius: 4px;
-  height: 40px;
-  font-size: 16px;
-  outline: none;
-  padding: 0 8px;
-  box-sizing: border-box;
+  transition: background-color 0.3s;
 }
 
-input[type='number'][name='delay'] {
-  width: 360px;
-}
-
-input[type='number'].numInput {
-  width: auto;
-}
-
-input[type='number']:hover {
-  border-color: #000;
-}
-
-input[type='number']:focus {
-  border-color: #4e75ff;
-}
-
-fieldset {
-  border: 1px solid #808080;
-  border-radius: 4px;
-  width: 360px;
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  padding: 0;
-}
-
-fieldset:hover {
-  border-color: #000;
-}
-
-legend {
-  font-size: 14px;
-  padding: 0 8px;
-}
-
-fieldset label {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  padding: 24px 48px 8px;
-}
-
-input[type='radio'] {
-  margin-right: 8px;
-}
-
-input[type='radio']:checked {
-  accent-color: #4e75ff;
-}
-
-button[type='submit'] {
-  width: 360px;
-}
-
-button:hover {
+form button:hover {
   background-color: #6c8cff;
 }
