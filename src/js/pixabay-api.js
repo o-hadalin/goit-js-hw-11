@@ -3,13 +3,13 @@ export const fetchImages = (query) => {
  const params = new URLSearchParams({
     key: API_KEY,
     q: query,
-    image_type: 'photo',
-    orientation: 'horizontal',
-    safesearch: 'true',
+    image_type: "photo",
+    orientation: "horizontal",
+    safesearch: "true",
   });
 
   const URL = `https://pixabay.com/api/?${params.toString()}`;
-  
+
   return fetch(URL)
       .then(response => {
         console.log(response);
